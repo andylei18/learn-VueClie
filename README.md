@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+用Vue-Cli脚手架  规范开发目录和开发流程，中间加入了Vuex和ES6
+
 ## Build Setup
 
 ``` bash

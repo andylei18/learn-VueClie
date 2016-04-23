@@ -326,7 +326,6 @@
   import leftMenu from './../components/menu.vue'
   import loadIng from './../components/loading.vue'
 
-
   export default {
     data () {
       return{
@@ -387,7 +386,7 @@
 
         $.ajax({
           type: "get",
-          url:'/list.json',
+          url:'../../src/mock/list.json',
           beforeSend:function(){
             _self.loadding.show = true;
           },

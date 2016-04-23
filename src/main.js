@@ -5,6 +5,7 @@ import { sync } from 'vuex-router-sync'
 import store from './vuex/store'
 import configRouter from './routes'
 import filters from './utils/filters'
+
 import App from './App.vue'
 import lazyload from 'vue-lazyload'
 import Mock from 'mockjs'
@@ -13,16 +14,19 @@ import './assets/styles/base.css'
 
 Vue.config.debug = true
 
+
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
 
 $.ajaxSettings.crossDomain = true;
+// 使用 Mock
+window.Mock = Mock;
 
 Vue.use(lazyload, {
-  error: './assets/images/common/error.png',
-  loading: './assets/images/common/loading.gif',
+  error: '../../src/assets/images/common/error.png',
+  loading: '../../src/assets/images/common/loading.gif',
   try: 3 // default 2
 });
 

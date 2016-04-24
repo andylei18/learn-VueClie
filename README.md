@@ -32,7 +32,7 @@ npm test
 │ package.json        # 项目配置
 │ README.md           # 项目说明
 │ index.html          # 首页
-│ build   # webpack 配置文件
+│ build               # webpack 配置文件
 │
 ├─node_modules
 │
@@ -47,7 +47,7 @@ npm test
     │  routes.js       # 路由
     │
     ├─components       # 组件
-    │      my-component.vue
+    │        my-component.vue
     │
     ├─assets           # 静态资源文件(images,font,js,css)
     │     

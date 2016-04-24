@@ -14,15 +14,13 @@ import './assets/styles/base.css'
 
 Vue.config.debug = true
 
-
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
 
 $.ajaxSettings.crossDomain = true;
-// 使用 Mock
-window.Mock = Mock;
+
 
 Vue.use(lazyload, {
   error: '../../src/assets/images/common/error.png',
@@ -30,7 +28,7 @@ Vue.use(lazyload, {
   try: 3 // default 2
 });
 
-var router = new VueRouter({
+const router = new VueRouter({
   //abstract:true,
   //地址栏不会有变化
   //以下设置需要服务端设置
@@ -48,6 +46,7 @@ sync(store, router)
 
 router.start(Vue.extend(App), 'app')
 
-window.router = router
+// 使用 Mock
+window.Mock = Mock;
 
 

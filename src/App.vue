@@ -46,7 +46,9 @@
   <div class="card-page card-active card-scroll">
 
     <!-- 页面加载进度条 -->
+<!--
     <progress-bar :show="progressbar"></progress-bar>
+-->
 
     <!-- 缓存一级路由切换的页面 -->
     <router-view class="g-view" keep-alive :transition="effect" transition-mode="out-in"></router-view>
@@ -56,7 +58,9 @@
 </template>
 <script>
 
-  import progressBar from './components/progressbar'
+  //import progressBar from './components/progressbar'
+
+  import store from './vuex/store'
 
   export default {
     data(){
@@ -66,8 +70,9 @@
         routeList         : [],     //访问周期中所访问了那些路径,在route.js中设置
       }
     },
+    store,
     components:{
-      progressBar
+      //progressBar
     }
   }
 </script>

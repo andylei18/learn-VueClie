@@ -7,49 +7,15 @@ export default function (router) {
     //默认
     '/':{
       name:'index',
-      component: require('./app.vue')
+      component: require('./App.vue')
     },
 
-    //首页
-    '/list':{
-      name:'list',
+    //购物车主页
+    '/cartindex':{
+      name:'cartindex',
       component: function(reslove){
-        return require(['./views/list.vue'],reslove)
+        return require(['./views/cartindex.vue'],reslove)
       }
-    },
-
-
-    //数据列表页面
-    '/listview':{
-      name:'listview',
-      component: require('./views/listview.vue')
-    },
-
-
-    //商品详情页
-    '/detail/:goodsid':{
-      name:'detail',
-      component: function(reslove){
-        return require(['./views/detail.vue'],reslove)
-      }
-    },
-
-    //购物车页
-    '/cart':{
-      name:'cart',
-      component: require('./views/cart.vue')
-    },
-
-    //订单页
-    '/order/:uid/:orderid':{
-      name:'order',
-      component: require('./views/order.vue')
-    },
-
-    //个人中心页
-    '/user/:userid':{
-      name:'user',
-      component: require('./views/user.vue')
     },
 
     //404页

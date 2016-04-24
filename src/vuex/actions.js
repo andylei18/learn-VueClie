@@ -1,4 +1,4 @@
-import shop from '../api/shop'
+import api from '../api'
 import * as types from './mutation-types'
 
 export const addToCart = ({ dispatch }, product) => {
@@ -10,7 +10,7 @@ export const addToCart = ({ dispatch }, product) => {
 export const checkout = ({ dispatch, state }, products) => {
   const savedCartItems = [...state.cart.added]
   dispatch(types.CHECKOUT_REQUEST)
-  shop.buyProducts(
+  api.buyProducts(
     products,
     () => dispatch(types.CHECKOUT_SUCCESS),
     () => dispatch(types.CHECKOUT_FAILURE, savedCartItems)
@@ -18,7 +18,19 @@ export const checkout = ({ dispatch, state }, products) => {
 }
 
 export const getAllProducts = ({ dispatch }) => {
-  shop.getProducts(products => {
+  api.getProducts(products => {
     dispatch(types.RECEIVE_PRODUCTS, products)
   })
 }
+
+export const getAjax = ({ dispatch }) => {
+  api.getLists().then(response => {
+    if(!response.code == 0){
+      return dispatch(types.FAILURE_GET_LISTS)
+    }
+    dispatch(types.SUCCESS_GET_LISTS, { lists: response })
+  }, response => {
+    dispatch(types.FAILURE_GET_LISTS)
+  })
+}
+

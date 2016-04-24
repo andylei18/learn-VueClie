@@ -10,6 +10,14 @@ export default function (router) {
       component: require('./App.vue')
     },
 
+    //数据列表
+    '/list':{
+      name:'list',
+      component: function(reslove){
+        return require(['./views/list.vue'],reslove)
+      }
+    },
+
     //购物车主页
     '/cartindex':{
       name:'cartindex',

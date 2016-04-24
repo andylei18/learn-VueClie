@@ -7,10 +7,9 @@ import configRouter from './routes'
 import filters from './utils/filters'
 
 import App from './App.vue'
-import lazyload from 'vue-lazyload'
 import Mock from 'mockjs'
 
-import './assets/styles/base.css'
+//import './assets/styles/base.css'
 
 Vue.config.debug = true
 
@@ -20,13 +19,6 @@ Vue.use(VueResource)
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
 
 $.ajaxSettings.crossDomain = true;
-
-
-Vue.use(lazyload, {
-  error: '../../src/assets/images/common/error.png',
-  loading: '../../src/assets/images/common/loading.gif',
-  try: 3 // default 2
-});
 
 const router = new VueRouter({
   //abstract:true,

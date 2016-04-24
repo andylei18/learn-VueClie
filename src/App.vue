@@ -63,16 +63,16 @@
   import store from './vuex/store'
 
   export default {
-    data(){
+    /*data(){
       return {
         progressbar           : false,  //loading-bar
         effect            : 'fade', //路由模板动画参数
         routeList         : [],     //访问周期中所访问了那些路径,在route.js中设置
       }
-    },
-    store,
-    components:{
+    },*/
+    store
+    /*components:{
       //progressBar
-    }
+    }*/
   }
 </script>
